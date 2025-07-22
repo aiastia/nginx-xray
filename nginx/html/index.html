@@ -2,10 +2,89 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>nginx xray 测试页</title>
+    <title>下载中心 - nginx xray</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5em;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 24px #0008;
+        }
+        .download-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 2.5em 2em 2em 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 350px;
+            width: 100%;
+            margin: 1em 0;
+        }
+        .download-btn {
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 1em 2.5em;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1.5em;
+            box-shadow: 0 2px 16px #e52e7166;
+            transition: transform 0.2s, box-shadow 0.2s;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .download-btn::after {
+            content: '';
+            position: absolute;
+            left: -75%;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transform: skewX(-20deg);
+            transition: left 0.5s;
+        }
+        .download-btn:hover {
+            transform: scale(1.07);
+            box-shadow: 0 4px 32px #e52e71bb;
+        }
+        .download-btn:hover::after {
+            left: 120%;
+        }
+        .desc {
+            font-size: 1.1rem;
+            margin-bottom: 1.5em;
+            color: #e0e0e0;
+            text-align: center;
+        }
+        @media (max-width: 500px) {
+            h1 { font-size: 2rem; }
+            .download-card { padding: 1.5em 1em; }
+        }
+    </style>
 </head>
 <body>
-    <h1>nginx 静态页面服务正常！</h1>
-    <p>如果你看到这个页面，说明 nginx 配置已生效。</p>
+    <h1>🚀 下载中心</h1>
+    <div class="download-card">
+        <div class="desc">下载页面！<br>点击下方按钮即可下载你需要的文件。</div>
+        <a href="#" class="download-btn">立即下载</a>
+    </div>
 </body>
 </html> 
