@@ -8,7 +8,9 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d  # 只挂载自定义配置
+      - ./nginx/conf.d:/etc/nginx/conf.d
       - ./nginx/certs:/etc/nginx/certs
       - ./nginx/html:/usr/share/nginx/html
     restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # 让容器能访问宿主机服务
